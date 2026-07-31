@@ -45,18 +45,18 @@ This list is opinionated and **production-first**. Entries are selected for team
 
 | | Build | | Measure, Secure & Operate |
 |---|---|---|---|
-| 🤖 | [Foundation Models (LLMs, VLMs, SLMs)](#-foundation-models-llms-vlms-slms) | 📐 | [Metrics](#-metrics) |
-| 💬 | [Prompt Engineering](#-prompt-engineering) | 🛡️ | [AI Security & Guardrails](#️-ai-security--guardrails) |
-| 🧠 | [RAG](#-rag) | 🏢 | [Enterprise AI](#-enterprise-ai) |
-| 🔍 | [Embeddings & Vector Databases](#-embeddings--vector-databases) | ☁️ | [Cloud AI (Azure, AWS, GCP)](#️-cloud-ai-azure-aws-gcp) |
-| 🤝 | [AI Agents](#-ai-agents) | 📦 | [MLOps & LLMOps](#-mlops--llmops) |
-| 🔌 | [MCP (Model Context Protocol)](#-mcp-model-context-protocol) | 🚀 | [Deployment](#-deployment) |
+| 🤖 | [Foundation Models (LLMs, VLMs, SLMs)](#-foundation-models-llms-vlms-slms) | 📊 | [Benchmarks](#-benchmarks) |
+| 💬 | [Prompt Engineering](#-prompt-engineering) | 📐 | [Metrics](#-metrics) |
+| 🧠 | [RAG](#-rag) | 🛡️ | [AI Security & Guardrails](#️-ai-security--guardrails) |
+| 🔍 | [Embeddings & Vector Databases](#-embeddings--vector-databases) | 🏢 | [Enterprise AI](#-enterprise-ai) |
+| 🤝 | [AI Agents](#-ai-agents) | ☁️ | [Cloud AI (Azure, AWS, GCP)](#️-cloud-ai-azure-aws-gcp) |
+| 🔌 | [MCP (Model Context Protocol)](#-mcp-model-context-protocol) | 📦 | [MLOps & LLMOps](#-mlops--llmops) |
+| 🎓 | [Agent Skills](#-agent-skills) | 🚀 | [Deployment](#-deployment) |
 | 🛠️ | [Agent Frameworks](#️-agent-frameworks) | 📚 | [Courses & Learning](#-courses--learning) |
 | 🏗️ | [AI & ML Frameworks](#️-ai--ml-frameworks) | 🎥 | [Videos & Talks](#-videos--talks) |
 | ⚡ | [AI SDKs](#-ai-sdks) | 📰 | [Newsletters & Blogs](#-newsletters--blogs) |
 | 🧰 | [Developer Tooling](#-developer-tooling) | 🌍 | [Open Source Projects](#-open-source-projects) |
 | 🧪 | [Evaluation & Observability](#-evaluation--observability) | 💼 | [Real-world Case Studies](#-real-world-case-studies) |
-| 📊 | [Benchmarks](#-benchmarks) | | |
 
 [Contributing](#-contributing) · [Author](#-author) · [License](#-license)
 
@@ -398,6 +398,104 @@ See [Benchmarks → Agents & Tool Use](#agents--tool-use) for SWE-bench, Termina
 | Least privilege | Scope each server to one system with the narrowest credentials that work |
 | Auditability | Log every tool invocation with arguments, identity and outcome |
 | Vetting | Pin versions and review source before installing community servers |
+
+**[⬆ back to top](#-table-of-contents)**
+
+---
+
+## 🎓 Agent Skills
+
+> If MCP gives an agent **tools and data**, Agent Skills give it **procedural knowledge** — how *this* team does code review, ships a release, or formats a report. A skill is a folder with a `SKILL.md` file; agents load the name and description at startup and pull in the full instructions only when a task matches.
+>
+> This section deliberately favors skills **written and used by the teams that maintain the product they describe**, over bulk-generated skill dumps. A skill encoding a real team's hard-won conventions is worth a hundred generated from a framework's README.
+
+### The Standard
+
+| Resource | Description |
+|---|---|
+| [agentskills.io](https://agentskills.io) ⭐ | Home of the open standard — overview, quickstart and client showcase |
+| [Specification](https://agentskills.io/specification) ⭐ | The normative `SKILL.md` format: frontmatter, structure, progressive disclosure |
+| [agentskills/agentskills](https://github.com/agentskills/agentskills) | Where the standard is developed in the open |
+| [anthropics/skills](https://github.com/anthropics/skills) ⭐ 🔓 | Anthropic's reference implementation and production-grade example skills |
+| [Equipping agents for the real world](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) ⭐ | The design rationale, and how Anthropic uses skills in its own products |
+| [Claude Code skills docs](https://code.claude.com/docs/en/skills) | Authoring, installing and scoping skills in practice |
+| [Claude platform docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) | Skills across the API, Agent SDK and Claude apps |
+
+### Skills Shipped by the Teams That Own the Domain
+
+The strongest signal that a skill is real: the people who maintain the framework, platform or product also maintain its skills, and ship them in the repo.
+
+| Skills | Maintained by | What they encode |
+|---|---|---|
+| [Laravel Boost](https://laravel.com/docs/12.x/boost#agent-skills) ⭐ 🔓 | Laravel core team | Laravel conventions and best practices, so agents write idiomatic Laravel rather than generic PHP |
+| [Anthropic document skills](https://github.com/anthropics/skills/tree/main/skills) ⭐ | Anthropic | The `pdf`, `docx`, `pptx` and `xlsx` skills that power Claude's real document editing |
+| [Spring AI](https://spring.io/blog/2026/01/13/spring-ai-generic-agent-skills/) 🔓 | Spring team | Bringing skills to Spring AI agents in the Java ecosystem |
+| [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery/tree/main/skills) 🔓 | Google AI Edge | Skills shipped alongside an on-device LLM application |
+| [Goose](https://goose-docs.ai/docs/guides/context-engineering/using-skills) 🔓 | Block | Context engineering with skills in an open agent runtime |
+| [Pulumi Neo](https://www.pulumi.com/docs/ai/skills/) | Pulumi | Infrastructure workflows constrained by org policy and approvals |
+| [Databricks Genie Code](https://docs.databricks.com/aws/en/assistant/skills) | Databricks | Data engineering and analytics procedures inside the lakehouse |
+| [Snowflake Cortex Code](https://docs.snowflake.com/en/user-guide/cortex-code/extensibility#extensibility-skills) | Snowflake | Extending an in-platform data agent with team procedures |
+| [Qodo](https://www.qodo.ai/blog/how-i-use-qodos-agent-skills-to-auto-fix-issues-in-pull-requests/) | Qodo | A written-up account of using skills to auto-fix PR issues |
+| [Letta](https://docs.letta.com/letta-code/skills/) 🔓 | Letta | Skills combined with persistent agent memory |
+| [OpenHands](https://docs.openhands.dev/overview/skills) 🔓 | OpenHands | Skills for cloud coding agents at scale |
+| [Firebender](https://docs.firebender.com/multi-agent/skills) | Firebender | Android-specific build, emulator and test workflows |
+
+### Methodology Collections
+
+Skills that encode a whole way of working, not a single task.
+
+| Collection | Author | What it encodes |
+|---|---|---|
+| [Superpowers](https://github.com/obra/superpowers) ⭐ 🔓 | Jesse Vincent | A full development methodology — TDD red/green/refactor, systematic debugging, brainstorming before building, verification before completion, subagent-driven development, worktree management |
+| [Netresearch marketplace](https://github.com/netresearch/claude-code-marketplace) 🔓 | Netresearch | An agency's working skills for TYPO3, PHP, Go, Docker, Jira, security and docs |
+| [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) ⭐ | Anthropic | The skill for writing skills — start here before authoring your own |
+| [mcp-builder](https://github.com/anthropics/skills/tree/main/skills/mcp-builder) | Anthropic | Generating well-formed MCP servers, itself packaged as a skill |
+
+### Directories & Curated Lists
+
+| Directory | Notes |
+|---|---|
+| [heilcheng/awesome-agent-skills](https://github.com/heilcheng/awesome-agent-skills) ⭐ | Explicitly curates skills used by real engineering teams over bulk-generated ones |
+| [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | Large community-maintained collection across many agents |
+| [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Broad productivity-oriented catalogue |
+| [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | Curated skills, resources and authoring tools |
+| [`agent-skills` topic](https://github.com/topics/agent-skills) | The raw firehose — useful for discovery, apply your own judgment |
+
+> **Vetting a skill before you install it:** a skill is instructions your agent will follow and scripts it may execute. Read `SKILL.md` in full, check what `scripts/` actually does, prefer skills maintained by the owners of the domain, and pin a commit rather than tracking a moving branch.
+
+### Client Support
+
+The format is portable; the same `SKILL.md` works across a growing set of agents.
+
+| Client | Skills documentation |
+|---|---|
+| [Claude Code](https://code.claude.com/docs/en/skills) ⭐ | Terminal, IDE, desktop and web |
+| [OpenAI Codex](https://developers.openai.com/codex/skills/) | Codex CLI and cloud |
+| [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills) | Across Copilot agents |
+| [VS Code](https://code.visualstudio.com/docs/copilot/customization/agent-skills) | Editor-native customization |
+| [Cursor](https://cursor.com/docs/context/skills) | Skills as codebase context |
+| [Gemini CLI](https://geminicli.com/docs/cli/skills/) 🔓 | Google's open terminal agent |
+| [Goose](https://goose-docs.ai/docs/guides/context-engineering/using-skills) 🔓 | Block's extensible agent |
+| [OpenCode](https://opencode.ai/docs/skills/) 🔓 | Terminal, IDE and desktop |
+| [Amp](https://ampcode.com/manual#agent-skills) | Sourcegraph's coding agent |
+| [Roo Code](https://docs.roocode.com/features/skills) 🔓 | Multi-mode agent team in your editor |
+| [Factory](https://docs.factory.ai/cli/configuration/skills) | Droids across IDE and CI/CD |
+| [Kiro](https://kiro.dev/docs/skills/) | Spec-driven development |
+| [Junie](https://junie.jetbrains.com/docs/agent-skills.html) | JetBrains IDE agent |
+| [Tabnine](https://docs.tabnine.com/main/getting-started/tabnine-cli/features/agent-skills) | Enterprise-controlled deployments |
+
+### Writing Skills That Actually Get Used
+
+| Practice | Why |
+|---|---|
+| **The description is the trigger** ⭐ | It is all the agent sees until activation. Write when to use it, not what it is — vague descriptions never fire |
+| **Keep `SKILL.md` short** | It loads into context wholesale. Push detail into `references/` and link to it |
+| **Use progressive disclosure** ⭐ | Name/description at startup, instructions on activation, referenced files on demand. Design for all three stages |
+| **Prefer scripts over prose** | Deterministic steps belong in `scripts/`, not in instructions the model may paraphrase |
+| **Encode judgment, not just steps** | The valuable part is *why* your team does it this way and when to deviate |
+| **Version-control with the code** | A skill describing your repo's conventions belongs in your repo, reviewed like any other change |
+| **Test it like code** | Run real tasks against it. A skill that never activates is worse than none — it creates false confidence |
+| **One skill, one job** | Composable skills beat a monolith; the agent loads only what the task needs |
 
 **[⬆ back to top](#-table-of-contents)**
 
