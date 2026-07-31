@@ -75,6 +75,22 @@ git commit -am "Add <Tool> to <Section>"
 git push origin add-awesome-tool
 ```
 
+### Automated checks
+
+Every pull request runs a [lychee](https://github.com/lycheeverse/lychee) link check over the Markdown. If it fails, your link is unreachable — fix the URL rather than working around the check.
+
+To run it before pushing:
+
+```bash
+# macOS
+brew install lychee
+# or: cargo install lychee
+
+lychee --config lychee.toml --no-progress .
+```
+
+A handful of hosts (LinkedIn, X, iso.org) block automated traffic and are listed in `.lycheeignore`. Add to that file only when a link genuinely works in a browser but cannot be verified by a bot — never to hide a dead link.
+
 Then open a pull request. In the description, include:
 
 - A link to the project

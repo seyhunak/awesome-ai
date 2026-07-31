@@ -13,6 +13,7 @@ RAG, vector databases, orchestration frameworks, and enterprise AI resources.
 [![GitHub watchers](https://img.shields.io/github/watchers/seyhunak/awesome-ai?style=for-the-badge&logo=github&color=00BFFF)](https://github.com/seyhunak/awesome-ai/watchers)
 [![GitHub contributors](https://img.shields.io/github/contributors/seyhunak/awesome-ai?style=for-the-badge&logo=github&color=FF69B4)](https://github.com/seyhunak/awesome-ai/graphs/contributors)
 
+[![Link Check](https://img.shields.io/github/actions/workflow/status/seyhunak/awesome-ai/link-check.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=links)](https://github.com/seyhunak/awesome-ai/actions/workflows/link-check.yml)
 [![License: MIT](https://img.shields.io/github/license/seyhunak/awesome-ai?style=flat-square&color=green)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![Last commit](https://img.shields.io/github/last-commit/seyhunak/awesome-ai?style=flat-square&logo=git&logoColor=white)](https://github.com/seyhunak/awesome-ai/commits/main)
@@ -765,7 +766,7 @@ See [Benchmarks → Agents & Tool Use](#agents--tool-use) for SWE-bench, Termina
 | [HaluEval](https://github.com/RUCAIBox/HaluEval) | Hallucination recognition across QA, dialogue and summarization |
 | [HarmBench](https://github.com/centerforaisafety/HarmBench) | Standardized red-teaming and refusal robustness |
 | [AgentHarm](https://huggingface.co/datasets/ai-safety-institute/AgentHarm) | Harmfulness of *agentic* behavior, not just generated text |
-| [AIR-Bench](https://github.com/stanford-crfm/air-bench) | Safety evaluated against actual regulatory risk categories |
+| [AIR-Bench 2024](https://github.com/stanford-crfm/air-bench-2024) | Safety evaluated against 314 risk categories drawn from real regulations |
 
 ### Multilingual
 
@@ -1250,7 +1251,7 @@ See [Benchmarks → Agents & Tool Use](#agents--tool-use) for SWE-bench, Termina
 | [Hamel Husain](https://hamel.dev) ⭐ | Hamel Husain | Evals, fine-tuning and hard-won practitioner lessons |
 | [Google DeepMind Blog](https://deepmind.google/discover/blog/) | DeepMind | Research and model announcements |
 | [Hugging Face Blog](https://huggingface.co/blog) | Hugging Face | Open-model releases and practical tutorials |
-| [Answer.AI](https://www.answer.ai/blog) | Jeremy Howard et al. | Practical R&D from the fast.ai lineage |
+| [Answer.AI](https://www.answer.ai) | Jeremy Howard et al. | Practical R&D from the fast.ai lineage |
 | [Netflix Tech Blog](https://netflixtechblog.com) · [Uber Engineering](https://www.uber.com/blog/engineering/) · [Airbnb Engineering](https://medium.com/airbnb-engineering) | Various | Real production ML/AI architecture writeups |
 
 ### Newsletters
@@ -1341,11 +1342,11 @@ See [Benchmarks → Agents & Tool Use](#agents--tool-use) for SWE-bench, Termina
 | [Airbnb](https://medium.com/airbnb-engineering/accelerating-large-scale-test-migration-with-llms-9565c208023b) | Migrating 3.5k test files with LLMs | Retry loops with expanded context beat prompt perfection |
 | [DoorDash](https://careersatdoordash.com/blog/large-language-modules-based-dasher-support-automation/) | Support automation | RAG plus an LLM Judge to control hallucination in customer-facing replies |
 | [Discord](https://discord.com/blog/developing-rapidly-with-generative-ai) | Shipping GenAI features | A pragmatic prototype → eval → productionize loop |
-| [GitHub](https://github.blog/ai-and-ml/generative-ai/how-we-built-copilot-workspace/) | Copilot Workspace | Designing agentic developer UX around review and correction |
+| [GitHub](https://github.blog/news-insights/product-news/github-copilot-workspace/) | Copilot Workspace | Designing agentic developer UX around review and correction |
 | [Grab](https://engineering.grab.com/llm-powered-data-classification) | Data classification at scale | LLMs for governance and metadata, not just chat |
 | [Klarna](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/) | Customer service assistant | Widely-cited deployment numbers — and a useful lesson in later rebalancing toward humans |
 | [Bloomberg](https://arxiv.org/abs/2303.17564) | BloombergGPT | Domain-specific pretraining, and why most teams should not repeat it |
-| [Replit](https://blog.replit.com/agent-3) | Autonomous coding agent | Long-horizon agent loops with self-testing |
+| [Replit](https://blog.replit.com/automated-self-testing) | Agent self-testing at scale | REPL-based verification instead of expensive computer-use checking |
 | [Anthropic](https://www.anthropic.com/engineering/built-multi-agent-research-system) ⭐ | Multi-agent research system | Orchestrator–worker patterns, and where multi-agent genuinely pays off |
 | [Anthropic](https://www.anthropic.com/engineering/building-effective-agents) ⭐ | Building effective agents | Start simple: most "agent" problems are solved by workflows |
 
