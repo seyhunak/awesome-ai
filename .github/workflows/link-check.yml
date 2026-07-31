@@ -43,12 +43,12 @@ jobs:
       issues: write # only used by the scheduled run, to file the report
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # lychee skips URLs it has already seen recently. Without this, every
       # run re-checks all ~550 links and burns time on hosts that rate-limit.
       - name: Restore lychee cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .lycheecache
           key: cache-lychee-${{ github.sha }}
@@ -69,7 +69,7 @@ jobs:
 
       - name: Upload report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: lychee-report
           path: ./lychee/out.md
@@ -78,7 +78,7 @@ jobs:
 
       - name: File an issue for broken links
         if: github.event_name == 'schedule' && steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: 'Broken links detected in the list'
           content-filepath: ./lychee/out.md
