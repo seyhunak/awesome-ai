@@ -6,9 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 `awesome-ai` is a curated "awesome list" for Enterprise AI, LLMs, GenAI, AI Agents, MCP, governance, security, MLOps, and production-ready AI tooling. It is content, not software.
 
-Files: `README.md` (the entire list), `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `LICENSE` (MIT), `CLAUDE.md`.
+Files: `README.md` (the entire list), `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `LICENSE` (MIT), `CLAUDE.md`, plus link-checking config (`lychee.toml`, `.lycheeignore`, `.github/workflows/link-check.yml`).
 
-There is no build system, test suite, package manifest, or CI. Do not add tooling unless asked — the deliverable is the curated content in `README.md`.
+There is no build system, test suite, or package manifest. The only CI is the link check below. Do not add further tooling unless asked — the deliverable is the curated content in `README.md`.
 
 ## Structure of README.md
 
@@ -71,12 +71,32 @@ Boundaries currently in force:
 
 ## Verification
 
-No automated checks exist. Before proposing changes:
+### Automated: link checking
 
-- Confirm links resolve and point at the canonical home
+`.github/workflows/link-check.yml` runs [lychee](https://github.com/lycheeverse/lychee) over every Markdown file.
+
+- **PRs and pushes to main** — the job fails, so dead links never land
+- **Mondays 06:00 UTC** — the job does *not* fail; it opens an issue labeled `broken-links`, since a link that died over the weekend isn't the last pusher's fault
+- Results cache for two days in `.lycheecache`, so reruns skip unchanged URLs
+
+Run it locally before pushing a large edit:
+
+```bash
+lychee --config lychee.toml --no-progress .
+```
+
+`lychee.toml` accepts `403` and `429` as passing — many doc hosts reject non-browser agents, and treating that as failure produces noise maintainers learn to ignore. `.lycheeignore` excludes hosts that are browser-reachable but bot-hostile (LinkedIn, X, iso.org). **Never add a host to `.lycheeignore` to silence a genuinely dead link** — fix or remove the entry instead.
+
+### Manual: what CI cannot check
+
+A link returning 200 says nothing about whether the entry still belongs. Before proposing changes:
+
+- Confirm the link points at the canonical home, not a redirect or aggregator
 - Check the entry isn't already listed in another section
 - Confirm the project is actively maintained (not archived, recent activity)
-- Verify Table of Contents anchors still resolve if headings changed
+- Verify Table of Contents anchors still resolve if headings changed — lychee is configured with `include_fragments = "none"` and will not catch a broken `#anchor`
+
+**Do not enable lychee's anchor checking to close that gap.** Its slugger strips the U+FE0F variation selector that GitHub's keeps, so it reports false failures on the five headings prefixed with 🛡️ ☁️ 🛠️ 🏗️. Editing the README to satisfy lychee would break those links on the live site. `github-slugger` is the authority — it is the library GitHub itself uses.
 
 Two throwaway scripts are worth recreating when editing structure: one that slugs every heading with `github-slugger` and diffs it against every `](#...)` link, and one that flags any URL starting a table row in more than one section. Both caught real errors during the initial build.
 
