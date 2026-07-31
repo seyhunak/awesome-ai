@@ -16,8 +16,8 @@ Fixed order, and the anchors in the Table of Contents depend on it:
 
 1. Centered header block — title, tagline, badges (repo badges use dynamic shields.io endpoints against `seyhunak/awesome-ai`, so counts stay live; never hardcode a star or follower number)
 2. `## 📖 About` — positioning and the badge legend
-3. `## 📑 Table of Contents` — a two-column table linking to all 19 content sections
-4. The 19 emoji-prefixed content sections
+3. `## 📑 Table of Contents` — a two-column table ("Build" / "Measure, Secure & Operate") linking to all 23 content sections
+4. The 23 emoji-prefixed content sections, ordered build → tools → measure → secure → operate → learn
 5. `## 🤝 Contributing`, `## ⭐ Star History`, `## 👤 Author`, `## 📄 License`
 
 Every content section ends with `**[⬆ back to top](#-table-of-contents)**` followed by `---`. Add it to any new section.
@@ -57,6 +57,18 @@ Section headings are emoji-prefixed, and GitHub strips the emoji while keeping t
 
 Headings whose emoji carries a variation selector (🛡️ ☁️ 🛠️) produce a different anchor from plain ones. If you rename a heading, update its Table of Contents entry and verify the anchor.
 
+## Avoiding duplication
+
+Several sections legitimately overlap (LiteLLM is both an SDK and a gateway; Ragas is both a RAG tool and an eval framework). Cross-section repeats are acceptable when each listing serves a different reader intent.
+
+**Not acceptable:** the same URL twice within one section, or a tool listed in three or more places. When a topic gets its own section, strip the now-redundant entries from the older section and leave a pointer instead — as `Open Source Projects` does for `AI & ML Frameworks`, and `AI Agents → Agent Benchmarks` does for `Benchmarks`.
+
+Boundaries currently in force:
+
+- **Agent Frameworks** orchestrate models; **AI & ML Frameworks** are what models are built and trained in
+- **Benchmarks** are public/comparative; **Metrics** are what you compute on your own traffic; **Evaluation & Observability** is the tooling that runs both
+- **Developer Tooling** is the workbench (tokenizers, labeling, quantization, CLIs); **Open Source Projects** is applications built on the stack
+
 ## Verification
 
 No automated checks exist. Before proposing changes:
@@ -65,5 +77,7 @@ No automated checks exist. Before proposing changes:
 - Check the entry isn't already listed in another section
 - Confirm the project is actively maintained (not archived, recent activity)
 - Verify Table of Contents anchors still resolve if headings changed
+
+Two throwaway scripts are worth recreating when editing structure: one that slugs every heading with `github-slugger` and diffs it against every `](#...)` link, and one that flags any URL starting a table row in more than one section. Both caught real errors during the initial build.
 
 `CONTRIBUTING.md` holds the full inclusion criteria — keep it and this file consistent when either changes.

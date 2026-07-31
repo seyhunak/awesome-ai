@@ -42,18 +42,20 @@ This list is opinionated and **production-first**. Entries are selected for team
 
 ## 📑 Table of Contents
 
-| | Section | | Section |
+| | Build | | Measure, Secure & Operate |
 |---|---|---|---|
-| 🤖 | [Foundation Models (LLMs, VLMs, SLMs)](#-foundation-models-llms-vlms-slms) | 🛡️ | [AI Security & Guardrails](#️-ai-security--guardrails) |
-| 💬 | [Prompt Engineering](#-prompt-engineering) | 🏢 | [Enterprise AI](#-enterprise-ai) |
-| 🧠 | [RAG](#-rag) | ☁️ | [Cloud AI (Azure, AWS, GCP)](#️-cloud-ai-azure-aws-gcp) |
-| 🔍 | [Embeddings & Vector Databases](#-embeddings--vector-databases) | 📦 | [MLOps & LLMOps](#-mlops--llmops) |
-| 🤝 | [AI Agents](#-ai-agents) | 🚀 | [Deployment](#-deployment) |
-| 🔌 | [MCP (Model Context Protocol)](#-mcp-model-context-protocol) | 📚 | [Courses & Learning](#-courses--learning) |
-| 🛠️ | [Agent Frameworks](#️-agent-frameworks) | 🎥 | [Videos & Talks](#-videos--talks) |
+| 🤖 | [Foundation Models (LLMs, VLMs, SLMs)](#-foundation-models-llms-vlms-slms) | 📐 | [Metrics](#-metrics) |
+| 💬 | [Prompt Engineering](#-prompt-engineering) | 🛡️ | [AI Security & Guardrails](#️-ai-security--guardrails) |
+| 🧠 | [RAG](#-rag) | 🏢 | [Enterprise AI](#-enterprise-ai) |
+| 🔍 | [Embeddings & Vector Databases](#-embeddings--vector-databases) | ☁️ | [Cloud AI (Azure, AWS, GCP)](#️-cloud-ai-azure-aws-gcp) |
+| 🤝 | [AI Agents](#-ai-agents) | 📦 | [MLOps & LLMOps](#-mlops--llmops) |
+| 🔌 | [MCP (Model Context Protocol)](#-mcp-model-context-protocol) | 🚀 | [Deployment](#-deployment) |
+| 🛠️ | [Agent Frameworks](#️-agent-frameworks) | 📚 | [Courses & Learning](#-courses--learning) |
+| 🏗️ | [AI & ML Frameworks](#️-ai--ml-frameworks) | 🎥 | [Videos & Talks](#-videos--talks) |
 | ⚡ | [AI SDKs](#-ai-sdks) | 📰 | [Newsletters & Blogs](#-newsletters--blogs) |
-| 🧪 | [Evaluation & Observability](#-evaluation--observability) | 🌍 | [Open Source Projects](#-open-source-projects) |
-| | | 💼 | [Real-world Case Studies](#-real-world-case-studies) |
+| 🧰 | [Developer Tooling](#-developer-tooling) | 🌍 | [Open Source Projects](#-open-source-projects) |
+| 🧪 | [Evaluation & Observability](#-evaluation--observability) | 💼 | [Real-world Case Studies](#-real-world-case-studies) |
+| 📊 | [Benchmarks](#-benchmarks) | | |
 
 [Contributing](#-contributing) · [Author](#-author) · [License](#-license)
 
@@ -96,7 +98,6 @@ This list is opinionated and **production-first**. Entries are selected for team
 |---|---|
 | [Qwen-VL](https://github.com/QwenLM/Qwen3-VL) | Leading open VLM family — documents, charts, video, GUI grounding |
 | [InternVL](https://github.com/OpenGVLab/InternVL) | Open multimodal models competitive with proprietary VLMs |
-| [Llama Vision](https://www.llama.com) | Meta's multimodal Llama variants |
 | [Pixtral](https://mistral.ai/news/pixtral-12b) | Mistral's open multimodal model |
 | [Molmo](https://molmo.allenai.org) | Ai2 open VLM with pointing/grounding capability |
 | [Whisper](https://github.com/openai/whisper) | Robust open speech-to-text across many languages |
@@ -330,15 +331,7 @@ This list is opinionated and **production-first**. Entries are selected for team
 
 ### Agent Benchmarks
 
-| Benchmark | Measures |
-|---|---|
-| [SWE-bench](https://github.com/SWE-bench/SWE-bench) ⭐ | Resolving real GitHub issues in real repositories |
-| [Terminal-Bench](https://github.com/laude-institute/terminal-bench) | End-to-end competence in a terminal environment |
-| [GAIA](https://huggingface.co/spaces/gaia-benchmark/leaderboard) | General assistant tasks requiring tools, browsing and reasoning |
-| [τ-bench](https://github.com/sierra-research/tau-bench) | Tool use plus policy adherence in realistic customer dialogues |
-| [OSWorld](https://github.com/xlang-ai/OSWorld) | Open-ended computer-use tasks in a real OS |
-| [WebArena](https://github.com/web-arena-x/webarena) | Autonomous agents on realistic self-hosted websites |
-| [AgentBench](https://github.com/THUDM/AgentBench) | Multi-environment agent capability evaluation |
+See [Benchmarks → Agents & Tool Use](#agents--tool-use) for SWE-bench, Terminal-Bench, τ-bench, BFCL, GAIA, OSWorld and WebArena, and [Metrics → Agent Metrics](#agent-metrics) for what to measure on your own traffic.
 
 **[⬆ back to top](#-table-of-contents)**
 
@@ -457,6 +450,83 @@ This list is opinionated and **production-first**. Entries are selected for team
 
 ---
 
+## 🏗️ AI & ML Frameworks
+
+> Agent frameworks orchestrate models. These frameworks *are* the layer models are built, trained and optimized in.
+
+### Deep Learning Frameworks
+
+| Framework | Org | Notes |
+|---|---|---|
+| [PyTorch](https://github.com/pytorch/pytorch) ⭐ 🔓 | PyTorch Foundation | The framework nearly all modern AI research and open models are written in |
+| [JAX](https://github.com/jax-ml/jax) 🔓 | Google | Composable function transforms + XLA; dominant for large-scale TPU training |
+| [TensorFlow](https://github.com/tensorflow/tensorflow) 🔓 | Google | Mature production ecosystem; still widespread in established deployments |
+| [Keras](https://github.com/keras-team/keras) 🔓 | Keras team | High-level API that now runs on JAX, PyTorch or TensorFlow |
+| [Flax NNX](https://github.com/google/flax) 🔓 | Google | The neural network library most JAX research builds on |
+| [MLX](https://github.com/ml-explore/mlx) 🔓 | Apple | Array framework designed for Apple silicon unified memory |
+| [tinygrad](https://github.com/tinygrad/tinygrad) 🔓 | tiny corp | Radically minimal framework — excellent for understanding the stack |
+| [Candle](https://github.com/huggingface/candle) 🔓 | Hugging Face | Minimalist Rust ML framework for serverless and embedded inference |
+| [Burn](https://github.com/tracel-ai/burn) 🔓 | Tracel AI | Rust deep learning framework with pluggable backends |
+| [ONNX](https://github.com/onnx/onnx) 🔓 | LF AI | Open interchange format for moving models between frameworks |
+
+### Model & Training Libraries
+
+| Library | Description |
+|---|---|
+| [Transformers](https://github.com/huggingface/transformers) ⭐ 🔓 | The model-definition library of record for text, vision, audio and multimodal |
+| [Diffusers](https://github.com/huggingface/diffusers) ⭐ 🔓 | State-of-the-art diffusion models for image, audio and video generation |
+| [Sentence-Transformers](https://github.com/UKPLab/sentence-transformers) 🔓 | Train and serve embedding and reranking models |
+| [Accelerate](https://github.com/huggingface/accelerate) 🔓 | Run the same training script on any distributed configuration |
+| [Lightning](https://github.com/Lightning-AI/pytorch-lightning) ⭐ 🔓 | Remove training boilerplate without giving up PyTorch control |
+| [Composer](https://github.com/mosaicml/composer) 🔓 | MosaicML's speed-focused training library with algorithmic optimizations |
+| [timm](https://github.com/huggingface/pytorch-image-models) 🔓 | The reference collection of vision backbones and training recipes |
+
+### Distributed & Large-Scale Training
+
+| Framework | Description |
+|---|---|
+| [DeepSpeed](https://github.com/deepspeedai/DeepSpeed) ⭐ 🔓 | ZeRO sharding, offload and pipeline parallelism for very large models |
+| [Megatron-LM](https://github.com/NVIDIA/Megatron-LM) ⭐ 🔓 | NVIDIA's tensor/pipeline/sequence parallelism reference implementation |
+| [PyTorch FSDP](https://docs.pytorch.org/docs/stable/fsdp.html) 🔓 | Native fully-sharded data parallel training |
+| [torchtitan](https://github.com/pytorch/torchtitan) 🔓 | PyTorch-native reference for pretraining at scale with 4D parallelism |
+| [Ray Train](https://github.com/ray-project/ray) 🔓 | Distributed training orchestration across heterogeneous clusters |
+| [Colossal-AI](https://github.com/hpcaitech/ColossalAI) 🔓 | Unified parallelism toolkit for large model training |
+| [Nanotron](https://github.com/huggingface/nanotron) 🔓 | Minimal, readable 3D-parallel pretraining library |
+| [MaxText](https://github.com/AI-Hypercomputer/maxtext) 🔓 | High-performance JAX/TPU LLM training reference |
+| [Levanter](https://github.com/stanford-crfm/levanter) 🔓 | Legible, scalable, bitwise-reproducible JAX training |
+
+### Reinforcement Learning & Post-Training
+
+| Library | Description |
+|---|---|
+| [TRL](https://github.com/huggingface/trl) ⭐ 🔓 | SFT, DPO, GRPO and PPO trainers that integrate with Transformers |
+| [verl](https://github.com/volcengine/verl) ⭐ 🔓 | Production-grade RL library for LLM post-training (HybridFlow) |
+| [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) 🔓 | Scalable RLHF built on Ray, vLLM and DeepSpeed |
+| [TorchRL](https://github.com/pytorch/rl) 🔓 | PyTorch-native RL primitives and environments |
+| [Gymnasium](https://github.com/Farama-Foundation/Gymnasium) ⭐ 🔓 | The standard RL environment API (maintained fork of OpenAI Gym) |
+| [PettingZoo](https://github.com/Farama-Foundation/PettingZoo) 🔓 | Gymnasium for multi-agent environments |
+| [Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3) 🔓 | Reliable, well-tested implementations of standard RL algorithms |
+| [CleanRL](https://github.com/vwxyzjn/cleanrl) 🔓 | Single-file RL implementations built for readability |
+| [Ray RLlib](https://docs.ray.io/en/latest/rllib/index.html) 🔓 | Scalable RL for production workloads |
+
+### Classical ML & Structured Data
+
+| Library | Description |
+|---|---|
+| [scikit-learn](https://github.com/scikit-learn/scikit-learn) ⭐ 🔓 | The baseline that still solves most tabular problems — try it before an LLM |
+| [XGBoost](https://github.com/dmlc/xgboost) ⭐ 🔓 | Gradient boosting that remains state of the art on tabular data |
+| [LightGBM](https://github.com/microsoft/LightGBM) 🔓 | Fast, memory-efficient gradient boosting |
+| [CatBoost](https://github.com/catboost/catboost) 🔓 | Gradient boosting with excellent categorical feature handling |
+| [statsmodels](https://github.com/statsmodels/statsmodels) 🔓 | Statistical models and hypothesis testing with proper inference |
+| [PyTorch Geometric](https://github.com/pyg-team/pytorch_geometric) 🔓 | Graph neural networks on PyTorch |
+| [DGL](https://github.com/dmlc/dgl) 🔓 | Deep graph library with multi-backend support |
+| [Prophet](https://github.com/facebook/prophet) 🔓 | Interpretable forecasting for business time series |
+| [Darts](https://github.com/unit8co/darts) 🔓 | Unified time series forecasting and anomaly detection |
+
+**[⬆ back to top](#-table-of-contents)**
+
+---
+
 ## ⚡ AI SDKs
 
 ### Provider SDKs
@@ -484,6 +554,90 @@ This list is opinionated and **production-first**. Entries are selected for team
 | [Streamlit](https://github.com/streamlit/streamlit) 🔓 | Data and AI apps in Python, no frontend required |
 | [assistant-ui](https://github.com/assistant-ui/assistant-ui) 🔓 | Composable React primitives for chat and agent UIs |
 | [CopilotKit](https://github.com/CopilotKit/CopilotKit) 🔓 | Drop in-app copilots and agentic UX into React apps |
+
+**[⬆ back to top](#-table-of-contents)**
+
+---
+
+## 🧰 Developer Tooling
+
+### Tokenization & Context Budgeting
+
+| Tool | Description |
+|---|---|
+| [tiktoken](https://github.com/openai/tiktoken) ⭐ 🔓 | Fast BPE tokenizer — the standard way to count tokens before you send them |
+| [Tokenizers](https://github.com/huggingface/tokenizers) 🔓 | Rust-backed tokenization used across the open ecosystem |
+| [Token counting API](https://docs.anthropic.com/en/docs/build-with-claude/token-counting) 🆓 | Count tokens exactly as the provider will, including tools and images |
+| [tokencost](https://github.com/AgentOps-AI/tokencost) 🔓 | Estimate USD cost of prompts and completions across providers |
+| [ttok](https://github.com/simonw/ttok) 🔓 | Count and truncate text to a token budget from the shell |
+
+### Playgrounds & Prompt IDEs
+
+| Tool | Description |
+|---|---|
+| [Anthropic Console](https://console.anthropic.com) ⭐ | Workbench with prompt generator, improver, test cases and evaluations |
+| [Google AI Studio](https://aistudio.google.com) 🆓 | Fast Gemini prototyping with multimodal input and code export |
+| [OpenAI Playground](https://platform.openai.com/playground) | Model and parameter experimentation with function calling |
+| [Langfuse Prompt Management](https://langfuse.com/docs/prompts) 🔓 | Version, label and deploy prompts without a code release |
+| [Latitude](https://github.com/latitude-dev/latitude-llm) 🔓 | Open-source prompt engineering platform with evals and versioning |
+| [Agenta](https://github.com/Agenta-AI/agenta) 🔓 | Prompt playground, versioning and evaluation for teams |
+| [PromptLayer](https://www.promptlayer.com) 💰 | Prompt registry and observability aimed at non-engineer collaborators |
+
+### Data Labeling & Curation
+
+| Tool | Description |
+|---|---|
+| [Argilla](https://github.com/argilla-io/argilla) ⭐ 🔓 | Collaboration tool for AI engineers who care about data quality |
+| [Label Studio](https://github.com/HumanSignal/label-studio) ⭐ 🔓 | Multi-type labeling for text, image, audio, video and time series |
+| [doccano](https://github.com/doccano/doccano) 🔓 | Lightweight open-source text annotation |
+| [Cleanlab](https://github.com/cleanlab/cleanlab) 🔓 | Automatically find label errors and data issues in your datasets |
+| [Lilac](https://github.com/databricks/lilac) 🔓 | Explore, cluster and clean unstructured datasets before training |
+| [Nomic Atlas](https://github.com/nomic-ai/nomic) 🔓 | Interactively visualize and inspect millions of embeddings |
+
+### Synthetic Data Generation
+
+| Tool | Description |
+|---|---|
+| [distilabel](https://github.com/argilla-io/distilabel) ⭐ 🔓 | Synthetic data and AI feedback pipelines for reliable dataset creation |
+| [Curator](https://github.com/bespokelabsai/curator) 🔓 | Bespoke Labs' library for post-training and structured synthetic data |
+| [DataDreamer](https://github.com/datadreamer-dev/DataDreamer) 🔓 | Reproducible synthetic data and prompting workflows for research |
+| [NeMo Curator](https://github.com/NVIDIA-NeMo/Curator) 🔓 | GPU-accelerated curation, deduplication and filtering at scale |
+| [SDV](https://github.com/sdv-dev/SDV) 🔓 | Synthetic tabular and relational data with privacy-preserving evaluation |
+
+### Quantization & Model Optimization
+
+| Tool | Description |
+|---|---|
+| [bitsandbytes](https://github.com/bitsandbytes-foundation/bitsandbytes) ⭐ 🔓 | 8-bit and 4-bit quantization primitives used throughout fine-tuning |
+| [GGUF](https://huggingface.co/docs/hub/gguf) ⭐ | The dominant quantization format for local inference (produced by llama.cpp) |
+| [llm-compressor](https://github.com/vllm-project/llm-compressor) 🔓 | Produce quantized, sparse checkpoints ready to serve on vLLM |
+| [AutoAWQ](https://github.com/casper-hansen/AutoAWQ) 🔓 | Activation-aware weight quantization for 4-bit inference |
+| [GPTQModel](https://github.com/ModelCloud/GPTQModel) 🔓 | Maintained GPTQ quantization toolkit |
+| [torchao](https://github.com/pytorch/ao) 🔓 | Native PyTorch quantization and sparsity for training and inference |
+| [Optimum](https://github.com/huggingface/optimum) 🔓 | Export and optimize Transformers for ONNX, OpenVINO and accelerators |
+| [ExLlamaV2](https://github.com/turboderp-org/exllamav2) 🔓 | Fast quantized inference on consumer GPUs |
+
+### Benchmarking & Load Testing
+
+| Tool | Description |
+|---|---|
+| [GuideLLM](https://github.com/vllm-project/guidellm) ⭐ 🔓 | Evaluate real-world latency, throughput and capacity of an LLM deployment |
+| [vLLM benchmarks](https://github.com/vllm-project/vllm/tree/main/benchmarks) 🔓 | Reference throughput and serving benchmark scripts |
+| [LLMPerf](https://github.com/ray-project/llmperf) 🔓 | Load-test and compare LLM API providers on latency and consistency |
+| [k6](https://github.com/grafana/k6) 🔓 | General-purpose load testing that adapts well to streaming endpoints |
+| [nvitop](https://github.com/XuehaiPan/nvitop) 🔓 | Interactive GPU process monitoring — the `htop` of NVIDIA devices |
+
+### Terminal & Agent Utilities
+
+| Tool | Description |
+|---|---|
+| [llm](https://github.com/simonw/llm) ⭐ 🔓 | Simon Willison's CLI for prompting, logging and templating across models |
+| [files-to-prompt](https://github.com/simonw/files-to-prompt) 🔓 | Concatenate a directory into a single, well-structured prompt |
+| [Repomix](https://github.com/yamadashy/repomix) ⭐ 🔓 | Pack an entire repository into one AI-friendly file |
+| [gitingest](https://github.com/coderamp-labs/gitingest) 🔓 | Turn any Git repo into a digestible text digest via URL |
+| [aichat](https://github.com/sigoden/aichat) 🔓 | All-in-one CLI with shell assistant, RAG and function calling |
+| [Context7](https://github.com/upstash/context7) 🔓 | Up-to-date library documentation served to coding agents over MCP |
+| [strip-tags](https://github.com/simonw/strip-tags) 🔓 | Strip HTML down to the text an LLM actually needs |
 
 **[⬆ back to top](#-table-of-contents)**
 
@@ -523,16 +677,233 @@ This list is opinionated and **production-first**. Entries are selected for team
 | [Evidently](https://github.com/evidentlyai/evidently) 🔓 | Data drift, quality and LLM evaluation with rich reports |
 | [MLflow LLM Evaluate](https://mlflow.org/docs/latest/llms/llm-evaluate/) 🔓 | Evaluation integrated with experiment tracking and the model registry |
 
+**[⬆ back to top](#-table-of-contents)**
+
+---
+
+## 📊 Benchmarks
+
+> Public benchmarks tell you which models to shortlist. They do **not** tell you whether your system works — only a golden dataset drawn from your own traffic does that. Treat leaderboards as a filter, never as an acceptance test.
+
+### Reasoning & Knowledge
+
+| Benchmark | Measures |
+|---|---|
+| [MMLU-Pro](https://github.com/TIGER-AI-Lab/MMLU-Pro) ⭐ | Harder, less saturated successor to MMLU across 14 domains |
+| [GPQA](https://github.com/idavidrein/gpqa) ⭐ | Graduate-level physics, chemistry and biology questions that resist search |
+| [Humanity's Last Exam](https://github.com/centerforaisafety/hle) | Expert-written questions at the frontier of human knowledge |
+| [ARC-AGI](https://github.com/fchollet/ARC-AGI) ⭐ | Abstract visual reasoning designed to resist memorization |
+| [BIG-bench Hard](https://github.com/suzgunmirac/BIG-Bench-Hard) | The subset of BIG-bench where models historically underperformed humans |
+| [MuSR](https://github.com/Zayne-Sprague/MuSR) | Multi-step soft reasoning over natural language narratives |
+| [DROP](https://allenai.org/data/drop) | Discrete reasoning over paragraphs — arithmetic, counting, sorting |
+
+### Mathematics
+
+| Benchmark | Measures |
+|---|---|
+| [AIME](https://huggingface.co/datasets/AI-MO/aimo-validation-aime) ⭐ | Competition math; the current default frontier reasoning check |
+| [MATH](https://github.com/hendrycks/math) | 12.5k competition problems with step-by-step solutions |
+| [GSM8K](https://github.com/openai/grade-school-math) | Grade-school word problems — largely saturated, still a smoke test |
+| [FrontierMath](https://epoch.ai/frontiermath) | Unpublished research-level problems designed to stay unsaturated |
+| [MathArena](https://matharena.ai) | Evaluation on competitions held *after* model training cutoffs |
+
+### Code & Software Engineering
+
+| Benchmark | Measures |
+|---|---|
+| [SWE-bench](https://github.com/SWE-bench/SWE-bench) ⭐ | Resolving real GitHub issues in real repositories — the industry reference |
+| [SWE-bench Verified](https://openai.com/index/introducing-swe-bench-verified/) ⭐ | Human-validated 500-problem subset; the number most vendors report |
+| [Terminal-Bench](https://github.com/laude-institute/terminal-bench) ⭐ | End-to-end task completion in a real terminal environment |
+| [LiveCodeBench](https://github.com/LiveCodeBench/LiveCodeBench) | Contamination-free competitive programming, continuously refreshed |
+| [BigCodeBench](https://github.com/bigcode-project/bigcodebench) | Realistic tasks requiring compositional use of many libraries |
+| [HumanEval](https://github.com/openai/human-eval) | The classic function-synthesis benchmark — saturated, but ubiquitous |
+| [MBPP](https://github.com/google-research/google-research/tree/master/mbpp) | Entry-level Python programming problems |
+| [Aider Polyglot](https://aider.chat/docs/leaderboards/) | Editing existing code correctly across six languages |
+| [Commit0](https://github.com/commit-0/commit0) | Writing entire libraries from scratch against a test suite |
+
+### Agents & Tool Use
+
+| Benchmark | Measures |
+|---|---|
+| [τ-bench / τ²-bench](https://github.com/sierra-research/tau-bench) ⭐ | Tool use plus policy adherence in realistic customer dialogues |
+| [BFCL](https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard) ⭐ | Berkeley Function Calling Leaderboard — the standard tool-calling test |
+| [GAIA](https://huggingface.co/spaces/gaia-benchmark/leaderboard) | General assistant tasks needing tools, browsing and multi-step reasoning |
+| [OSWorld](https://github.com/xlang-ai/OSWorld) | Open-ended computer-use tasks in a real operating system |
+| [WebArena](https://github.com/web-arena-x/webarena) | Autonomous agents on realistic self-hosted websites |
+| [AgentBench](https://github.com/THUDM/AgentBench) | Agent capability across eight distinct environments |
+| [MLE-bench](https://github.com/openai/mle-bench) | Agents competing on real Kaggle machine learning tasks |
+
+### Long Context & Retrieval
+
+| Benchmark | Measures |
+|---|---|
+| [RULER](https://github.com/NVIDIA/RULER) ⭐ | What a model's *effective* context length actually is, beyond the spec sheet |
+| [LongBench](https://github.com/THUDM/LongBench) | Bilingual, multi-task long-context understanding |
+| [Needle in a Haystack](https://github.com/gkamradt/LLMTest_NeedleInAHaystack) | Retrieval of a single fact at varying depth and context length |
+| [BEIR](https://github.com/beir-cellar/beir) ⭐ | Zero-shot retrieval generalization across 18 datasets |
+| [MTEB](https://github.com/embeddings-benchmark/mteb) ⭐ | Massive text embedding benchmark across tasks and languages |
+| [LoCoMo](https://github.com/snap-research/LoCoMo) | Very long-term conversational memory |
+
+### Multimodal
+
+| Benchmark | Measures |
+|---|---|
+| [MMMU](https://github.com/MMMU-Benchmark/MMMU) ⭐ | College-level multimodal understanding across 30 subjects |
+| [MathVista](https://github.com/lupantech/MathVista) | Mathematical reasoning in visual contexts |
+| [DocVQA](https://www.docvqa.org) | Question answering over document images — core to enterprise RAG |
+| [ChartQA](https://github.com/vis-nlp/ChartQA) | Reasoning over charts and plots |
+| [Video-MME](https://github.com/MME-Benchmarks/Video-MME) | Comprehensive video understanding evaluation |
+| [ScreenSpot](https://github.com/njucckevin/SeeClick) | GUI element grounding — the basis of computer-use agents |
+
+### Instruction Following, Safety & Truthfulness
+
+| Benchmark | Measures |
+|---|---|
+| [IFEval](https://github.com/google-research/google-research/tree/master/instruction_following_eval) ⭐ | Verifiable instruction following ("write exactly 3 bullets in JSON") |
+| [SimpleQA](https://github.com/openai/simple-evals) ⭐ | Short-form factuality and, crucially, calibrated abstention |
+| [TruthfulQA](https://github.com/sylinrl/TruthfulQA) | Resistance to reproducing common human misconceptions |
+| [HaluEval](https://github.com/RUCAIBox/HaluEval) | Hallucination recognition across QA, dialogue and summarization |
+| [HarmBench](https://github.com/centerforaisafety/HarmBench) | Standardized red-teaming and refusal robustness |
+| [AgentHarm](https://huggingface.co/datasets/ai-safety-institute/AgentHarm) | Harmfulness of *agentic* behavior, not just generated text |
+| [AIR-Bench](https://github.com/stanford-crfm/air-bench) | Safety evaluated against actual regulatory risk categories |
+
+### Multilingual
+
+| Benchmark | Measures |
+|---|---|
+| [Global-MMLU](https://huggingface.co/datasets/CohereLabs/Global-MMLU) | Culturally-aware MMLU across 42 languages |
+| [MGSM](https://huggingface.co/datasets/juletxara/mgsm) | Grade-school math reasoning in 10+ languages |
+| [FLORES-200](https://github.com/facebookresearch/flores) | Machine translation across 200 languages |
+| [XTREME](https://github.com/google-research/xtreme) | Cross-lingual transfer across 40 languages and 9 tasks |
+| [Belebele](https://github.com/facebookresearch/belebele) | Reading comprehension parallel across 122 language variants |
+
 ### Live Leaderboards
 
 | Leaderboard | Focus |
 |---|---|
-| [LMArena](https://lmarena.ai) | Human preference via blind pairwise voting |
-| [Artificial Analysis](https://artificialanalysis.ai) | Quality vs. price vs. latency across providers |
+| [LMArena](https://lmarena.ai) ⭐ | Human preference via blind pairwise voting |
+| [Artificial Analysis](https://artificialanalysis.ai) ⭐ | Quality vs. price vs. latency across providers |
 | [LiveBench](https://livebench.ai) | Contamination-resistant, monthly-refreshed questions |
 | [Open LLM Leaderboard](https://huggingface.co/open-llm-leaderboard) | Standardized open-model benchmarks |
 | [SWE-bench Leaderboard](https://www.swebench.com) | Real-world software engineering task resolution |
-| [MTEB](https://huggingface.co/spaces/mteb/leaderboard) | Embedding model quality across tasks and languages |
+| [MTEB Leaderboard](https://huggingface.co/spaces/mteb/leaderboard) | Embedding model quality across tasks and languages |
+| [BFCL Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) | Function/tool calling accuracy |
+| [Epoch AI Benchmarking Hub](https://epoch.ai/data/ai-benchmarking-dashboard) | Independent tracking of capability trends over time |
+
+### Reading Benchmark Results Honestly
+
+| Pitfall | What to do |
+|---|---|
+| **Contamination** | Test sets leak into training data. Prefer continuously-refreshed benchmarks (LiveBench, LiveCodeBench, MathArena) |
+| **Saturation** | A benchmark above ~90% has stopped discriminating. Move up a tier |
+| **Prompt sensitivity** | Scores swing several points on formatting alone. Compare only same-harness numbers |
+| **Self-reported numbers** | Vendors pick favorable configurations. Prefer independent runs |
+| **Pass@k inflation** | `pass@10` is not `pass@1`. Check which is quoted |
+| **Averaging across subsets** | A strong average can hide a domain that matters to you. Read the breakdown |
+| **Cost and latency omitted** | A 2-point gain for 10× the cost is usually a bad trade |
+
+**[⬆ back to top](#-table-of-contents)**
+
+---
+
+## 📐 Metrics
+
+> Pick metrics before you build. A metric you added after seeing results is a story, not a measurement.
+
+### Retrieval Metrics
+
+| Metric | Definition | Use when |
+|---|---|---|
+| **Recall@k** | Fraction of all relevant documents that appear in the top *k* | The ceiling on your RAG quality — measure this first |
+| **Precision@k** | Fraction of the top *k* that are relevant | Context window is tight and noise hurts |
+| **MRR** | Mean of `1/rank` of the first relevant result | Exactly one right answer exists (lookup, navigation) |
+| **nDCG@k** | Gain discounted by log rank, normalized to the ideal ordering | Graded relevance and ranking order both matter |
+| **MAP** | Mean of average precision across queries | Multiple relevant documents, order-sensitive |
+| **Hit Rate@k** | Share of queries with ≥1 relevant result in top *k* | A blunt but readable executive-facing number |
+
+> **In practice:** optimize retrieval for Recall@k with a generous *k*, then let a reranker fix precision. Improving the generator cannot recover a document retrieval never returned.
+
+### RAG Metrics
+
+| Metric | Question it answers | Typical source |
+|---|---|---|
+| **Faithfulness / Groundedness** ⭐ | Is every claim supported by retrieved context? | [Ragas](https://github.com/explodinggradients/ragas) |
+| **Answer Relevancy** | Does the answer actually address the question asked? | Ragas, DeepEval |
+| **Context Precision** | Are the retrieved chunks relevant and well-ranked? | Ragas |
+| **Context Recall** | Was all information needed for the ground truth retrieved? | Ragas |
+| **Noise Sensitivity** | Does irrelevant retrieved context degrade the answer? | Ragas |
+| **Citation Accuracy** | Do the cited sources genuinely support the claims? | Custom / LLM judge |
+| **Refusal Correctness** ⭐ | Does it decline when the context truly lacks the answer? | Custom |
+
+### Generation Quality Metrics
+
+| Metric | Type | Notes |
+|---|---|---|
+| **LLM-as-Judge** ⭐ | Model-graded | The workhorse for open-ended output. Requires its own validation against human labels |
+| **Pairwise preference** ⭐ | Model/human | More reliable than absolute scoring — comparison beats calibration |
+| **BERTScore** | Embedding | Semantic similarity to a reference; better than n-gram overlap |
+| **ROUGE** | Lexical | Summarization overlap. Weak signal, but cheap and stable |
+| **BLEU / chrF** | Lexical | Translation. Still standard in MT, poor for open generation |
+| **Exact Match / F1** | Lexical | Extractive QA and structured field extraction |
+| **Perplexity** | Probabilistic | Model fit during training — not a product quality metric |
+| **Schema validity** ⭐ | Deterministic | Percentage of outputs that parse and validate. Cheap and unambiguous |
+
+> **On LLM judges:** validate the judge before you trust it. Measure judge-vs-human agreement (Cohen's κ) on a labeled sample, control position and verbosity bias, and never judge with the same model and prompt that produced the output.
+
+### Classification & Extraction Metrics
+
+| Metric | Formula | Use when |
+|---|---|---|
+| **Precision** | `TP / (TP + FP)` | False positives are expensive (spam filters, auto-actions) |
+| **Recall** | `TP / (TP + FN)` | Misses are expensive (safety, compliance, fraud) |
+| **F1** | `2PR / (P + R)` | You need one balanced number |
+| **Fβ** | Weighted harmonic mean | Recall matters β× more than precision |
+| **PR-AUC** ⭐ | Area under precision-recall | Imbalanced classes — preferred over ROC-AUC here |
+| **Cohen's κ** | Agreement above chance | Comparing model to human, or judge to human |
+| **ECE** | Expected calibration error | Confidence scores drive downstream routing or escalation |
+
+### Agent Metrics
+
+| Metric | What it captures |
+|---|---|
+| **Task Success Rate** ⭐ | Did the agent achieve the goal, verified by an outcome check — not self-report |
+| **Tool Selection Accuracy** | Right tool chosen for the step |
+| **Tool Call Validity** | Arguments parse and satisfy the schema |
+| **Steps to Completion** | Efficiency; sudden growth signals looping or confusion |
+| **Cost per Task** ⭐ | Total tokens across every turn and subagent — the number finance asks about |
+| **Loop / Stall Rate** | Runs hitting the step ceiling without terminating |
+| **Recovery Rate** | Runs that hit an error and still finished successfully |
+| **Human Intervention Rate** ⭐ | How often a person had to step in — the real autonomy measure |
+| **Trajectory Match** | Did it follow an acceptable path, not just reach an acceptable end |
+
+### Serving & Production Metrics
+
+| Metric | Definition | Why it matters |
+|---|---|---|
+| **TTFT** ⭐ | Time to first token | Dominates *perceived* latency in streaming UIs |
+| **TPOT / ITL** | Time per output token (inter-token latency) | Determines whether text renders faster than reading speed |
+| **E2E Latency** | Total request time | The number that matters for non-streaming and batch |
+| **Throughput** | Output tokens/sec, requests/sec | Capacity planning and cost per unit of work |
+| **Goodput** ⭐ | Throughput of requests that *met* their SLO | Prevents "fast but useless" scaling wins |
+| **Queue Time** | Wait before scheduling | Early warning of saturation |
+| **Cache Hit Rate** ⭐ | Prompt-cache hits / total | Usually the biggest single cost lever |
+| **Cost per Request/User** ⭐ | Spend attributed by tenant and feature | Unit economics; measure before scaling |
+| **Error / Refusal Rate** | 4xx, 5xx, overloads, refusals | Split these — a refusal is a product signal, not an outage |
+
+> **Report percentiles, not averages.** p50 hides the experience; p95 and p99 are what users complain about. Track TTFT and E2E separately — they fail for different reasons.
+
+### Metric Selection by Use Case
+
+| Use case | Primary metric | Guardrail metrics |
+|---|---|---|
+| RAG question answering | Faithfulness | Context Recall, refusal correctness, cost/query |
+| Search & retrieval | nDCG@10 | Recall@50, p95 latency |
+| Summarization | LLM-judge quality | Faithfulness, length adherence |
+| Structured extraction | Field-level F1 | Schema validity rate, cost/document |
+| Classification | PR-AUC or F1 | Calibration, per-class recall |
+| Coding agent | Task success rate | Test pass rate, cost/task, human intervention |
+| Customer support agent | Resolution rate | Escalation rate, policy violations, CSAT |
+| Content generation | Pairwise preference | Safety violation rate, brand adherence |
 
 **[⬆ back to top](#-table-of-contents)**
 
@@ -902,17 +1273,7 @@ This list is opinionated and **production-first**. Entries are selected for team
 
 ## 🌍 Open Source Projects
 
-### Core Libraries
-
-| Project | Description |
-|---|---|
-| [Transformers](https://github.com/huggingface/transformers) ⭐ | The model definition library for text, vision and audio |
-| [PyTorch](https://github.com/pytorch/pytorch) ⭐ | The framework nearly all modern AI research is written in |
-| [JAX](https://github.com/jax-ml/jax) | Composable transformations and XLA compilation for large-scale training |
-| [Datasets](https://github.com/huggingface/datasets) | Load and process datasets of any size efficiently |
-| [Accelerate](https://github.com/huggingface/accelerate) | Same training code on any distributed configuration |
-| [Tokenizers](https://github.com/huggingface/tokenizers) | Fast, production-grade tokenization |
-| [scikit-learn](https://github.com/scikit-learn/scikit-learn) | Classical ML that still solves most tabular problems |
+> Core libraries — PyTorch, JAX, Transformers, scikit-learn and friends — live in [AI & ML Frameworks](#️-ai--ml-frameworks). This section covers the applications and utilities built on top of them.
 
 ### Chat UIs & Self-Hosted Apps
 
@@ -937,7 +1298,6 @@ This list is opinionated and **production-first**. Entries are selected for team
 | [Kokoro](https://github.com/hexgrad/kokoro) | Small, high-quality open TTS |
 | [F5-TTS](https://github.com/SWivid/F5-TTS) | Fast, natural zero-shot voice cloning |
 | [Piper](https://github.com/OHF-Voice/piper1-gpl) | Fast local neural TTS for edge devices |
-| [Diffusers](https://github.com/huggingface/diffusers) ⭐ | State-of-the-art diffusion models for image, audio and video |
 | [ComfyUI](https://github.com/comfyanonymous/ComfyUI) ⭐ | Node-based generative pipeline engine with a huge ecosystem |
 | [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) | Real-time detection, segmentation and tracking |
 | [Segment Anything](https://github.com/facebookresearch/segment-anything) | Promptable segmentation foundation model |
@@ -949,9 +1309,9 @@ This list is opinionated and **production-first**. Entries are selected for team
 | [Polars](https://github.com/pola-rs/polars) ⭐ | Blazing-fast DataFrames for AI data preparation |
 | [DuckDB](https://github.com/duckdb/duckdb) ⭐ | In-process analytical SQL — ideal for eval and dataset work |
 | [Pydantic](https://github.com/pydantic/pydantic) ⭐ | Validation layer underpinning most Python AI tooling |
-| [tiktoken](https://github.com/openai/tiktoken) | Fast BPE tokenizer for token counting and budgeting |
-| [datatrove](https://github.com/huggingface/datatrove) | Large-scale text data processing pipelines |
-| [NeMo Curator](https://github.com/NVIDIA-NeMo/Curator) | GPU-accelerated dataset curation and deduplication |
+| [Datasets](https://github.com/huggingface/datasets) | Load, stream and process datasets of any size efficiently |
+| [datatrove](https://github.com/huggingface/datatrove) | Large-scale text data processing pipelines for pretraining corpora |
+| [Apache Arrow](https://github.com/apache/arrow) | The columnar memory format most AI data tooling interchanges through |
 
 **[⬆ back to top](#-table-of-contents)**
 
