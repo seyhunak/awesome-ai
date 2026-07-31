@@ -16,8 +16,8 @@ Fixed order, and the anchors in the Table of Contents depend on it:
 
 1. Centered header block — title, tagline, badges (repo badges use dynamic shields.io endpoints against `seyhunak/awesome-ai`, so counts stay live; never hardcode a star or follower number)
 2. `## 📖 About` — positioning and the badge legend
-3. `## 📑 Table of Contents` — a two-column table ("Build" / "Measure, Secure & Operate") linking to all 23 content sections
-4. The 23 emoji-prefixed content sections, ordered build → tools → measure → secure → operate → learn
+3. `## 📑 Table of Contents` — a two-column table ("Build" / "Measure, Secure & Operate") linking to all 24 content sections
+4. The 24 emoji-prefixed content sections, ordered build → tools → measure → secure → operate → learn
 5. `## 🤝 Contributing`, `## ⭐ Star History`, `## 👤 Author`, `## 📄 License`
 
 Every content section ends with `**[⬆ back to top](#-table-of-contents)**` followed by `---`. Add it to any new section.
@@ -65,6 +65,7 @@ Several sections legitimately overlap (LiteLLM is both an SDK and a gateway; Rag
 
 Boundaries currently in force:
 
+- **MCP** gives agents tools and data; **Agent Skills** give them procedural knowledge. Both are extensibility standards — keep them distinct
 - **Agent Frameworks** orchestrate models; **AI & ML Frameworks** are what models are built and trained in
 - **Benchmarks** are public/comparative; **Metrics** are what you compute on your own traffic; **Evaluation & Observability** is the tooling that runs both
 - **Developer Tooling** is the workbench (tokenizers, labeling, quantization, CLIs); **Open Source Projects** is applications built on the stack
