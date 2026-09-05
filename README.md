@@ -1356,6 +1356,7 @@ The format is portable; the same `SKILL.md` works across a growing set of agents
 
 | Newsletter | Cadence | Focus |
 |---|---|---|
+| [AI Weekly](https://aiweekly.co/) | 3x weekly | Expert-signal coverage of models, agents, research and policy |
 | [The Batch](https://www.deeplearning.ai/the-batch/) ⭐ | Weekly | Andrew Ng's balanced industry roundup |
 | [Import AI](https://importai.substack.com) ⭐ | Weekly | Jack Clark on research, policy and capability trends |
 | [TLDR AI](https://tldr.tech/ai) | Daily | Five-minute daily digest |
