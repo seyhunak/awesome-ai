@@ -1017,6 +1017,7 @@ The format is portable; the same `SKILL.md` works across a growing set of agents
 | [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/) ⭐ | The canonical risk list — prompt injection, data leakage, supply chain, excessive agency |
 | [OWASP Agentic AI Threats & Mitigations](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/) | Threat taxonomy specific to autonomous agents |
 | [MITRE ATLAS](https://atlas.mitre.org) ⭐ | Adversarial tactics and techniques against AI systems, ATT&CK-style |
+| [Orca AI Incident Archive](https://github.com/Continuum-AI-Corp/Orca-AI-Incident-Archive) 🔓 | Sourced record of real-world AI agent security incidents since 2025 — confirmed-victim flag, attack-chain diagrams, JSON/CSV export |
 | [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) ⭐ | Govern / Map / Measure / Manage — the framework most enterprise programs anchor to |
 | [NIST Adversarial ML Taxonomy](https://csrc.nist.gov/pubs/ai/100/2/e2025/final) | Standard vocabulary for attacks and mitigations |
 | [Google SAIF](https://saif.google) | Secure AI Framework with a practical risk self-assessment |
