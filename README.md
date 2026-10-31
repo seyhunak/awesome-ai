@@ -315,6 +315,7 @@ This list is opinionated and **production-first**. Entries are selected for team
 | [Stagehand](https://github.com/browserbase/stagehand) 🔓 | Playwright plus `act`/`extract`/`observe` primitives; deterministic where it matters |
 | [Playwright MCP](https://github.com/microsoft/playwright-mcp) 🔓 | Accessibility-tree browser control exposed over MCP |
 | [Skyvern](https://github.com/Skyvern-AI/skyvern) 🔓 | LLM + vision workflow automation for browser tasks |
+| [agent-qa](https://vostride.com/docs/agent-qa/quickstart) | Natural-language web, Android and iOS testing through CLI/MCP, with memidex persistent memory and validated self-improvement |
 | [Computer Use (Claude)](https://docs.anthropic.com/en/docs/agents-and-tools/computer-use) 💰 | Screen-, mouse- and keyboard-level control reference implementation |
 | [E2B](https://github.com/e2b-dev/E2B) 🔓 ☁️ | Secure cloud sandboxes for running agent-generated code |
 | [Daytona](https://github.com/daytonaio/daytona) 🔓 ☁️ | Fast, isolated runtimes for agent workloads |
