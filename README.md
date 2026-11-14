@@ -888,6 +888,7 @@ The format is portable; the same `SKILL.md` works across a growing set of agents
 | [MTEB Leaderboard](https://huggingface.co/spaces/mteb/leaderboard) | Embedding model quality across tasks and languages |
 | [BFCL Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html) | Function/tool calling accuracy |
 | [Epoch AI Benchmarking Hub](https://epoch.ai/data/ai-benchmarking-dashboard) | Independent tracking of capability trends over time |
+| [AIHOT Model Leaderboard](https://aihot.news/leaderboard) | Chinese-language model rankings compiled from published third-party benchmarks, with per-model scores and a transparent methodology |
 
 ### Reading Benchmark Results Honestly
 
