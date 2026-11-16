@@ -1028,6 +1028,7 @@ The format is portable; the same `SKILL.md` works across a growing set of agents
 |---|---|
 | [Guardrails AI](https://github.com/guardrails-ai/guardrails) ⭐ 🔓 | Input/output validators ("guards") with a shared hub of checks |
 | [NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) 🔓 | Programmable rails for topic, safety and execution control |
+| [HOL Guard](https://hol.org/guard) 🔓 | Local policy checks and approvals for supported coding-agent commands, file access and MCP tool use |
 | [LLM Guard](https://github.com/protectai/llm-guard) 🔓 | Comprehensive scanner suite — injection, PII, toxicity, secrets |
 | [Llama Guard / Purple Llama](https://github.com/meta-llama/PurpleLlama) 🔓 | Meta's safety classifiers and cybersecurity evals for LLM I/O |
 | [Granite Guardian](https://github.com/ibm-granite/granite-guardian) 🔓 | IBM's risk detection models for prompts, responses and RAG groundedness |
