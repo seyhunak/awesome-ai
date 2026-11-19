@@ -329,6 +329,7 @@ This list is opinionated and **production-first**. Entries are selected for team
 | [Letta](https://github.com/letta-ai/letta) 🔓 | Stateful agents with long-term memory (formerly MemGPT) |
 | [CAMEL](https://github.com/camel-ai/camel) 🔓 | Research framework for multi-agent communication at scale |
 | [Suna](https://github.com/kortix-ai/suna) 🔓 | Open-source generalist assistant with browser, files and shell |
+| [Orkas](https://github.com/Orkas-AI/Orkas) 🔓 | Local-first macOS and Windows workspace that coordinates specialist agents for project research, data analysis, and editable presentations |
 
 ### Agent Benchmarks
 
